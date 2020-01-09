@@ -61,7 +61,14 @@ function getConfig() {
 }
 
 async function getRedirects(publish) {
-	let redirects = await redirectParser.parseRedirectsFormat(path.join(publish, '_redirects')).then(r => r.success);
+	let file = path.join(publish, '_redirects');
+
+	let exists = await fileExists(file);
+	if (!exists) {
+		return [];
+	}
+
+	let redirects = await redirectParser.parseRedirectsFormat(file).then(r => r.success);
 
 	return redirects.map(rule => ({
 		to: rule.to,
@@ -143,13 +150,13 @@ function fileExists(file) {
 	}));
 
 	if (config.command.length > 0) {
-	console.log('Executing dev command', config.command);
-	let child = execa(config.command, {
-		shell: true,
-		preferLocal: true,
-	});
-	child.stdout.pipe(process.stdout);
-	child.stderr.pipe(process.stderr);
+		console.log('Executing dev command', config.command);
+		let child = execa(config.command, {
+			shell: true,
+			preferLocal: true,
+		});
+		child.stdout.pipe(process.stdout);
+		child.stderr.pipe(process.stderr);
 
 		process.on('exit', () => {
 			child.kill();
