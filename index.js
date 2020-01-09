@@ -163,7 +163,9 @@ function fileExists(file) {
 		child.stderr.pipe(process.stderr);
 
 		process.on('exit', () => {
-			child.kill();
+			child.kill('SIGTERM', {
+				forceKillAfterTimeout: 2000
+			});
 		});
 	}
 })();
