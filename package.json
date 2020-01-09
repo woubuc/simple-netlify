@@ -1,7 +1,7 @@
 {
   "name": "simple-netlify",
   "description": "A simple development server for Netlify sites",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "index.js",
   "bin": {
     "simple-netlify": "./index.js"
