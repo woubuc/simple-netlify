@@ -2,10 +2,15 @@
   "name": "simple-netlify",
   "version": "0.1.0",
   "main": "index.js",
-  "license": "MIT",
   "bin": {
     "simple-netlify": "./index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/woubuc/simple-netlify.git"
+  },
+  "keywords": ["netlify", "development", "server", "cli", "static", "simple"],
+  "license": "MIT",
   "dependencies": {
     "boxen": "^4.2.0",
     "execa": "^4.0.0",
