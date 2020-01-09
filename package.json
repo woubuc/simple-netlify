@@ -1,6 +1,6 @@
 {
   "name": "simple-netlify",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index.js",
   "bin": {
     "simple-netlify": "./index.js"
@@ -9,7 +9,14 @@
     "type": "git",
     "url": "git://github.com/woubuc/simple-netlify.git"
   },
-  "keywords": ["netlify", "development", "server", "cli", "static", "simple"],
+  "keywords": [
+    "netlify",
+    "development",
+    "server",
+    "cli",
+    "static",
+    "simple"
+  ],
   "license": "MIT",
   "dependencies": {
     "boxen": "^4.2.0",
@@ -23,5 +30,7 @@
     "path-to-regexp": "^6.1.0",
     "toml": "^3.0.0"
   },
-  "files": ["index.js"]
+  "files": [
+    "index.js"
+  ]
 }
