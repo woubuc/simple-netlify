@@ -1,4 +1,7 @@
 # Simple Netlify
+[![npm](https://img.shields.io/npm/v/simple-netlify)](https://www.npmjs.com/package/simple-netlify)
+[![David](https://img.shields.io/david/woubuc/simple-netlify)](https://david-dm.org/woubuc/simple-netlify)
+
 A simple development server for Netlify sites. Because `netlify dev` does too much and is very involved if all you want is to serve some html files.
 
 - Handles basic redirect rules from a `_redirects` file
