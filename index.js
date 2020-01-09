@@ -154,6 +154,10 @@ function fileExists(file) {
 		let child = execa(config.command, {
 			shell: true,
 			preferLocal: true,
+			env: {
+				URL: `http://localhost:${ port }`,
+				DEPLOY_URL: `http://localhost:${ port }`,
+			}
 		});
 		child.stdout.pipe(process.stdout);
 		child.stderr.pipe(process.stderr);
