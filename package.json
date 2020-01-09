@@ -1,0 +1,22 @@
+{
+  "name": "simple-netlify",
+  "version": "0.1.0",
+  "main": "index.js",
+  "license": "MIT",
+  "bin": {
+    "simple-netlify": "./index.js"
+  },
+  "dependencies": {
+    "boxen": "^4.2.0",
+    "execa": "^4.0.0",
+    "get-port": "^5.1.0",
+    "koa": "^2.11.0",
+    "koa-send": "^5.0.0",
+    "lodash.get": "^4.4.2",
+    "minimist": "^1.2.0",
+    "netlify-redirect-parser": "^2.2.0",
+    "path-to-regexp": "^6.1.0",
+    "toml": "^3.0.0"
+  },
+  "files": ["index.js"]
+}
