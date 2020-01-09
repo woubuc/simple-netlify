@@ -30,7 +30,7 @@ function readFile(file) {
 function getConfig() {
 	let config = {
 		publish: path.resolve('dist'),
-		command: 'yon dev',
+		command: '',
 	};
 
 	if (argv['p']) {
@@ -142,6 +142,7 @@ function fileExists(file) {
 		borderStyle: 'round',
 	}));
 
+	if (config.command.length > 0) {
 	console.log('Executing dev command', config.command);
 	let child = execa(config.command, {
 		shell: true,
@@ -149,4 +150,9 @@ function fileExists(file) {
 	});
 	child.stdout.pipe(process.stdout);
 	child.stderr.pipe(process.stderr);
+
+		process.on('exit', () => {
+			child.kill();
+		});
+	}
 })();
