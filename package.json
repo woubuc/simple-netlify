@@ -41,7 +41,8 @@
     "toml": "^3.0.0"
   },
   "files": [
-    "src/*.js"
+    "cli.js",
+    "lib/*.js"
   ],
   "devDependencies": {
     "@types/koa": "^2.11.0",
