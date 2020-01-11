@@ -95,11 +95,7 @@ function fileExists(file) {
 	let redirects = await getRedirects(config.publish);
 
 	async function handler(ctx) {
-		if (ctx.path.endsWith('/')) {
-			ctx.path = ctx.path.slice(0, -1);
-		}
-
-		for (let add of ['', '.html', '/index.html']) {
+		for (let add of ['', '.html', 'index.html', '/index.html']) {
 			let exists = await fileExists(path.join(config.publish, ctx.path + add));
 			if (!exists) continue;
 
