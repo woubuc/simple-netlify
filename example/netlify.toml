@@ -1,0 +1,5 @@
+[build]
+publish = "dist"
+
+[dev]
+command = "parcel src/index.html"
