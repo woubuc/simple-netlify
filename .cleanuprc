@@ -1,0 +1,6 @@
+example/.cache
+example/dist
+example/node_modules
+
+lib
+node_modules

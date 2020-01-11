@@ -2,9 +2,16 @@
   "name": "simple-netlify",
   "description": "A simple development server for Netlify sites",
   "version": "0.1.5",
-  "main": "index.js",
+  "main": "cli.js",
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "yon build"
+  },
+  "engines": {
+    "node": ">=8"
+  },
   "bin": {
-    "simple-netlify": "./index.js"
+    "simple-netlify": "cli.js"
   },
   "repository": {
     "type": "git",
@@ -21,17 +28,25 @@
   "license": "MIT",
   "dependencies": {
     "boxen": "^4.2.0",
-    "execa": "^4.0.0",
+    "cross-spawn": "^7.0.1",
+    "fs-extra": "^8.1.0",
     "get-port": "^5.1.0",
     "koa": "^2.11.0",
     "koa-send": "^5.0.0",
     "lodash.get": "^4.4.2",
     "minimist": "^1.2.0",
     "netlify-redirect-parser": "^2.2.0",
+    "node-cleanup": "^2.1.2",
     "path-to-regexp": "^6.1.0",
     "toml": "^3.0.0"
   },
   "files": [
-    "index.js"
-  ]
+    "src/*.js"
+  ],
+  "devDependencies": {
+    "@types/koa": "^2.11.0",
+    "@types/node": "^13.1.6",
+    "typescript": "^3.7.4",
+    "yarn-or-npm": "^3.0.1"
+  }
 }
