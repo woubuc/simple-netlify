@@ -1,5 +1,5 @@
 [build]
-command = "parcel build src/*.html && ncp _redirects dist"
+command = "parcel build src/*.html && ncp _redirects dist/_redirects"
 publish = "dist"
 functions = "functions"
 
