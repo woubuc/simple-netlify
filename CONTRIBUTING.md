@@ -6,7 +6,10 @@ These rules are not necessarily always fully enforced - that's better left to bi
 ## Code style
 Respect the .editorconfig rules in the project root. Try to keep the rest of the code style at least somewhat consistent with what's already there.
 
-The module is written in Typescript, but strict rules are disabled. This means you're not *required* to type everything. However, you are encouraged to add types where it makes sense, to help out future developers.
+The module is written in Typescript, but strict rules are disabled. This means you're not *required* to type everything. However, you are encouraged to add types where it makes sense, to help out other developers who need to work with your code in the future.
+
+### Documentation & comments
+_Do as I say, not as I do_. I haven't set a great example so far, but try to add (doc) comments where needed, to document what the application is doing.
 
 ## PRs & Squashing
 Before submitting a pull request, always open an issue to discuss the changes you intend to make. This will prevent you from making changes that are incompatible with the goals of the project, or with other features being worked on.
