@@ -7,6 +7,7 @@ A simple development server for Netlify sites. Because `netlify dev` does too mu
 - Handles basic redirect rules from a `_redirects` file
 - Serves the `publish` directory from a `netlify.toml` file
 - Runs the `command` from a `netlify.toml` file
+- Handles & serves js `functions` directory from a `netlify.toml` file
 
 This package is very basic. If you need the full power of Netlify, use `netlify dev` from their official CLI.
 
@@ -21,7 +22,7 @@ Run it
 simple-netlify
 ```
 
-It will use the `command` and `publish` properties set in a `netlify.toml` file if you have one, either from the `[dev]` section or from the `[build]` section if no `[dev]` section is found.
+It will use the properties set in a `netlify.toml` file if you have one, either from the `[dev]` section or falling back to the `[build]` section.
 
 You can also override it with your own directory or commands:
 ```she
@@ -32,6 +33,10 @@ simple-netlify -p dist
 simple-netlify --command "yarn dev"
 # or
 simple-netlify -c "yarn dev"
+
+simple-netlify --functions functions
+# or
+simple-netlify -f functions
 ```
 
 # Issues

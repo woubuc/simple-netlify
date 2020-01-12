@@ -9,26 +9,32 @@ import { readFile } from './utils';
 const argv = minimist(process.argv.slice(2), {
 	alias: {
 		p: 'publish',
+		f: 'functions',
 		c: 'command',
 	},
 });
 
 export interface Config {
 	publish : string;
-	port : number;
-
+	functions ?: string;
 	command ?: string;
+	port : number;
 }
 
 export async function loadConfig() {
 	let config : Config = {
 		publish: undefined,
+		functions: undefined,
 		command: undefined,
 		port: undefined,
 	};
 
 	if (argv['p']) {
 		config.publish = path.resolve(argv['p']);
+	}
+
+	if (argv['f']) {
+		config.functions = path.resolve(argv['f']);
 	}
 
 	if (argv['c']) {
@@ -48,6 +54,13 @@ export async function loadConfig() {
 			let publish = _get(netlify, 'dev.publish', _get(netlify, 'build.publish'));
 			if (publish !== undefined) {
 				config.publish = path.resolve(publish);
+			}
+		}
+
+		if (config.functions === undefined) {
+			let functions = _get(netlify, 'dev.functions', _get(netlify, 'build.functions'));
+			if (functions !== undefined) {
+				config.functions = path.resolve(functions);
 			}
 		}
 

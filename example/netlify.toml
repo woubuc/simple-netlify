@@ -1,5 +1,6 @@
 [build]
 publish = "dist"
+functions = "functions"
 
 [dev]
-command = "parcel src/index.html"
+command = "parcel src/*.html"
