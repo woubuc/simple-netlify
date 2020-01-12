@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "simple-netlify"
   },
-  "dependencies": {
+  "devDependencies": {
+    "ncp": "^2.0.0",
     "parcel": "^1.12.4",
-    "simple-netlify": "file:../"
+    "simple-netlify": "^0.3.0"
   }
 }

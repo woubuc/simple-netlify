@@ -1,4 +1,5 @@
 [build]
+command = "parcel build src/*.html && ncp _redirects dist"
 publish = "dist"
 functions = "functions"
 
