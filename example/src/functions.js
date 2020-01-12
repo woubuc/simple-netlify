@@ -7,15 +7,7 @@ window.loadFunctions = function loadFunctions() {
 		.then(data => content1.textContent = data.message);
 
 
-	let content2 = document.getElementById('content2');
-	content2.textContent = 'Loading';
-
-	fetch('/.netlify/functions/hello-timeout')
-		.then(res => res.json())
-		.then(data => content2.textContent = data.message);
-
-
-	let content3 = document.getElementById('content3');
+	let content3 = document.getElementById('content2');
 	content3.textContent = 'Loading';
 
 	fetch('/.netlify/functions/hello-async')
