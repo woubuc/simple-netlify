@@ -32,6 +32,6 @@ export async function loadRedirects(publish : string) : Promise<RedirectRule[]> 
 	return redirects.map(rule => ({
 		to: rule.to,
 		status: rule.status || 301,
-		match: match(rule.path.replace('*', ':splat')),
+		match: match(rule.path.replace('*', '(.+)')),
 	}));
 }
